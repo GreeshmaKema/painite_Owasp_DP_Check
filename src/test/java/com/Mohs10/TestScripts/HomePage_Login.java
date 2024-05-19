@@ -4,37 +4,38 @@ import java.util.Properties;
 
 import org.testng.annotations.Test;
 
-import com.Mohs10.Base.ScreenRecorderUtil;
+//import com.Mohs10.Base.ScreenRecorderUtil;
 import com.Mohs10.Base.StartBrowser;
 import com.Mohs10.Base.XLUtils;
 import com.Mohs10.Functions.CommonFuns;
 import com.Mohs10.utility.Log;
 
-import io.qameta.allure.Description;
+/*import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
-import io.qameta.allure.Story;
+import io.qameta.allure.Story; */
 
 public class HomePage_Login extends StartBrowser {
 	Properties prop;
-	String excelfile = "C:\\Users\\Dell\\Desktop\\Deepika\\Grid\\pAInITe\\ExcelTestInputData\\TestData.xlsx";
+	String excelfile = "C:\\Users\\DELL E5490\\PAINITE Folder\\painite_copy\\pAInITe\\ExcelTestInputData\\TestData.xlsx";
 	String excelsheet = "Login";
 	String exsheet2 = "NegativeLogin";
 
-	@Test(priority = 0 ,description="Login Test")
-	@Severity(SeverityLevel.NORMAL)    
-    @Description("Clicking on news button........")
-    @Epic("EP001")
-    @Feature("Feature1: Login")
-    @Story("Story:Login Presence")
-    @Step("Verify Login Presence")
+	//@Test(priority = 0 ,description="Login Test")
+	//@Severity(SeverityLevel.NORMAL)    
+   // @Description("Clicking on news button........")
+   // @Epic("EP001")
+   // @Feature("Feature1: Login")
+   // @Story("Story:Login Presence")
+  //  @Step("Verify Login Presence")
+	@Test(priority=0)
 	public void LoginTestCase() throws Exception {
-		ScreenRecorderUtil.startRecord("LoginTestCase");
-		Log.startTestCase("---------------------------------Positive Login Test Case---------------------------------");
-		Log.info("-----------This TC Will login with correct credentials-----------");
+		//ScreenRecorderUtil.startRecord("LoginTestCase");
+		//Log.startTestCase("---------------------------------Positive Login Test Case---------------------------------");
+		//Log.info("-----------This TC Will login with correct credentials-----------");
 		CommonFuns hm1 = new CommonFuns();
 
 		String Email = XLUtils.getStringCellData(excelfile, excelsheet, 1, 0);
@@ -43,10 +44,10 @@ public class HomePage_Login extends StartBrowser {
 		hm1.logIn(Email, Pwd);
 		Thread.sleep(5000);
 		Log.endTestCase("---------------------------------End of Positive Login Test Case---------------------------------");
-		ScreenRecorderUtil.stopRecord();
+		//ScreenRecorderUtil.stopRecord();
 	}
 
-	@Test(priority = 1 ,description="Negative Login Test")
+/*	@Test(priority = 1 ,description="Negative Login Test")
 	@Severity(SeverityLevel.NORMAL)    
     @Description("Clicking on news button........")
     @Epic("EP002")
@@ -67,5 +68,5 @@ public class HomePage_Login extends StartBrowser {
 			ScreenRecorderUtil.stopRecord();
 		}
 
-	}
+	} */
 }
